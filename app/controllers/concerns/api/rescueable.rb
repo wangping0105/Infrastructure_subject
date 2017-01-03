@@ -4,7 +4,6 @@ module Api::Rescueable
   included do
     rescue_from StandardError, with: :rescue_all
     rescue_from EntityValidationError, with: :entity_validation_error
-    rescue_from CommonError, with: :common_error
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
     rescue_from ActiveRecord::RecordInvalid, with: :show_errors
   end
@@ -13,11 +12,6 @@ module Api::Rescueable
   def entity_validation_error(e)
     log_error(e)
     render json: { code: ErrorCodes::INVALID_PARAMS, message: e.message, error: e.class.name.underscore }
-  end
-
-  def common_error(e)
-    log_error(e)
-    render json: { code: ErrorCodes::INVALID_PARAMS, message: e.msg, error: e.class.name.underscore }
   end
 
   def rescue_all(e)
