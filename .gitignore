@@ -9,21 +9,17 @@
 
 
 # Ignore all logfiles and tempfiles.
-/log
+/log/*
 !/log/.keep
 /tmp
 /.idea
 /config/*.yml
+/public/files/*
+/public/books/*
 /test
-public/system
-public/api_doc/
-public/assets/
+public/videos/*
 
-#config/database.yml
-#config/chewy.yml
+config/database.yml
 config/secrets.yml
 config/nginx.conf
 config/unicorn/*.rb
-#config/logrotate.conf
-#config/newrelic.yml
-#config/app.god

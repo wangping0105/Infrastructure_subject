@@ -42,7 +42,7 @@
         $.ajax({
           url: url,
           type: "post",
-          data: {'user[email]': $("#user_email").val() , 'user[phone]': $("#user_phone").val()},
+          data: {'user[password]': $("#user_password").val() , 'user[phone]': $("#user_phone").val()},
           dataType: "json",
           success: function(data){
             if(data.code == 0){
