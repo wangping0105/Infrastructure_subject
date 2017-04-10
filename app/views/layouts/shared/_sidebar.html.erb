@@ -1,0 +1,6 @@
+<div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+      <li class="<%= active_by('home') %>"><a href="/">管理首页 <span class="sr-only">(current)</span></a></li>
+      <li><%= link_to '退出', destroy_user_session_path, method: :delete %></li>
+    </ul>
+</div>

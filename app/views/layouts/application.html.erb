@@ -10,9 +10,22 @@
   <%end %>
 </head>
 <body>
-<%= link_to '退出', destroy_user_session_path, method: :delete %>
 <%= render 'shared/flash_area' %>
-<%= yield %>
+<%= render 'layouts/shared/navbar' %>
+<div style="height: 60px"></div>
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'layouts/shared/sidebar' %>
+
+    <div class="col-md-offset-2 main">
+      <%= yield %>
+    </div>
+  </div>
+
+  <%= render 'layouts/shared/footer' %>
+</div>
+
+
 <% if content_for?(:js_in_footer)%>
   <%= yield(:js_in_footer) %>
 <%end %>

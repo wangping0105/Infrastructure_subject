@@ -11,10 +11,7 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :phone, conditions: -> { paranoia_scope }
   validates_presence_of :password, :message => "密码不能为空!"
-  # validates_uniqueness_of :email, conditions: -> { paranoia_scope }, :message => "邮箱已经存在!"
-  # validates_presence_of :email, :message => "邮箱不能为空!"
-  # validates_format_of  :email, :message => "邮箱格式不正确!", :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
-  enum :role => {nomal: 0, admin: 1}
+  enum :role => { nomal: 0, admin: 1 }
 
   before_save do
     self.name ||= self.phone

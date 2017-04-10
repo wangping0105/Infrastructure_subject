@@ -7,12 +7,12 @@ default: &default
 
 development:
   <<: *default
-  database: wangdai_dev
+  database: boat_dev
 
 test:
   <<: *default
-  database: wangdai_test
+  database: boat_test
 
 production:
   <<: *default
-  database: wangdai_production
+  database: boat_production
